@@ -1,0 +1,12 @@
+<div class="container mb-3">
+  <h1 class="mb-5">My tasks</h1>
+  <ul class="list-group list-group-flush">
+    <% @articles.each do |article| %>
+      <li class="list-group-item p-3">
+        <h2><%= link_to article.title, article_path(article), :class =>"text-decoration-none" %></h2>
+        <p><%= article.content%></p>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "create a new article", new_article_path, class:"btn btn-primary mt-5"%>
+</div>
